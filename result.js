@@ -36,6 +36,49 @@ document.addEventListener('DOMContentLoaded', () => {
     data.push([...trait, value1, value2]);
   }
 
+  const data_type = [
+    ['FRUT', '自己完結、不思議ちゃん'],
+    ['FRUH', 'つかみどころのない人'],
+    ['FRST', '損する聖人'],
+    ['FRSH', '実はしっかり、人気者'],
+    ['FGUT', '拗らせばらまき人間'],
+    ['FGUH', '見返りを求めない、助け合い'],
+    ['FGST', '優しくありつづける'],
+    ['FGSH', '暖かい人格者'],
+    ['KRUT', '悲しきモンスター'],
+    ['KRUH', '典型的なダメ人間'],
+    ['KRST', '真面目君は損したくない'],
+    ['KRSH', '生きるのが上手'],
+    ['KGUT', '粘着人間'],
+    ['KGUH', '愛するよりも、愛されたい'],
+    ['KGST', '人間不信な優しい人'],
+    ['KGSH', '義理堅いサムライ']
+  ]
+
+  const typeArea = document.querySelector('.type_area');
+  const typeCode = data_type[data_num[0]][0];
+  const typeText = data_type[data_num[0]][1];
+
+  const resultTitle = document.createElement('p');
+  resultTitle.className = 'result-title';
+  resultTitle.textContent = 'あなたの信頼タイプ:';
+  typeArea.appendChild(resultTitle);
+
+  const resultType = document.createElement('p');
+  resultType.className = 'result-type';
+  resultType.textContent = typeText;
+  typeArea.appendChild(resultType);
+
+  const result16type = document.createElement('p');
+  result16type.className = 'result-16type';
+  result16type.textContent = typeCode;
+  typeArea.appendChild(result16type);
+
+  const resultImg = document.createElement('img');
+  resultImg.className = 'result-img';
+  resultImg.src = `./img/${typeCode.toLowerCase()}.png`;
+  typeArea.appendChild(resultImg);
+
   const detailArea = document.querySelector('.detail_area');
 
   data.forEach(([traitName, traitText1, traitText2, value1, value2]) => {
