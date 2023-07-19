@@ -1,0 +1,178 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Helvetica Neue",
+    Arial, sans-serif;
+  font-size: 10px;
+  word-spacing: 1px;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+}
+
+body {
+  position: relative;
+  max-width: 34.3rem;
+  margin: 0 auto;
+  background: #ffffff;
+}
+
+p,
+span,
+a {
+  font-weight: 600;
+  font-size: 1.4rem;
+  line-height: 1.25;
+  color: #576071;
+}
+
+label,
+span {
+  color: #576071;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 6.0rem;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  background-color: #ffffff;
+}
+
+.logo-img {
+  width: 4.0rem;
+  height: 4.0rem;
+  margin: 0 1.6rem;
+}
+
+header>p {
+  font-size: 1.8rem;
+}
+
+main {
+  margin-top: 9.2rem;
+}
+
+.item {
+  margin-top: 3.2rem;
+  padding-bottom: 1.6rem;
+  border-bottom: 1px solid #dddfe2;
+}
+
+.question {
+  font-size: 1.8rem;
+}
+
+.select_area {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3.2rem;
+}
+
+.custom-radio {
+  display: inline-block;
+  margin-right: 16px;
+  border-radius: 50%;
+  border: 2px solid #b5b5b5;
+  background-color: #ffffff;
+  box-sizing: border-box;
+}
+
+.last-radio {
+  margin-right: 0;
+}
+
+.green-radio {
+  border: 2px solid #4CAF50;
+}
+
+.purple-radio {
+  border: 2px solid #88619A;
+}
+
+.hidden-radio:checked+.custom-radio {
+  background-color: #b5b5b5;
+}
+
+.hidden-radio:checked+.green-radio {
+  background-color: #4CAF50;
+}
+
+.hidden-radio:checked+.purple-radio {
+  background-color: #88619A;
+}
+
+.size45 {
+  width: 4.5rem;
+  height: 4.5rem;
+}
+
+.size35 {
+  width: 3.5rem;
+  height: 3.5rem;
+}
+
+.size30 {
+  width: 3.0rem;
+  height: 3.0rem;
+}
+
+.size25 {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+.caption_area {
+  display: flex;
+  margin: 1.6rem 0;
+}
+
+.caption_area>.caption:not(:last-child) {
+  margin-right: 1.6rem;
+}
+
+.caption {
+  width: 16.4rem;
+}
+
+.radio-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.hidden-radio {
+  display: none;
+}
+
+.submit_area {
+  display: flex;
+  justify-content: center;
+  margin: 1.6rem 0 8.0rem;
+  padding: 1.6rem 0 8.0rem;
+  border-bottom: 1px solid #dddfe2;
+}
+
+.submit-btn {
+  width: 30.0rem;
+  height: 6.0rem;
+  padding: 1.2rem 2.4rem;
+  border-radius: 3.0rem;
+  border: none;
+  background-color: #88619A;
+}
+
+.submit-btn>span {
+  font-weight: 600;
+  font-size: 1.8rem;
+  color: #ffffff;
+}
