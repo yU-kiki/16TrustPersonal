@@ -1,10 +1,40 @@
+function processData(data) {
+  // console.log(data);
+  const processedData = [];
+  const sumData = [];
+  for (let i = 0; i < 4; i++) {
+    const value = parseInt(data[i]) + parseInt(data[i + 4]);
+    sumData.push(value);
+  }
+
+  const binaryStr = sumData.map(val => (val >= 0 ? '1' : '0')).join('');
+  const decimal = parseInt(binaryStr, 2);
+  processedData.push(decimal);
+  for (const value of sumData) {
+    const result = Math.round((value / 6) * 50 + 50);
+    processedData.push(result, 100 - result);
+  }
+  // console.log(processedData)
+  return processedData;
+}
+
+
 document.addEventListener('DOMContentLoaded', () => {
-  const data = [
-    ['寛大性', 'ケチ', '太っ腹', 77, 23],
-    ['人間関係依存度', '義理堅い', '冷淡', 43, 57],
-    ['責任感', '誠実', '浮つき', 11, 89],
-    ['社交性', '人懐っこい', 'とっつきにくい', 80, 20],
+  const orderedValues = JSON.parse(localStorage.getItem('selectedValues'));
+  const data_num = processData(orderedValues);
+  const traits = [
+    ['寛大性', 'ケチ', '太っ腹'],
+    ['人間関係依存度', '義理堅い', '冷淡'],
+    ['責任感', '誠実', '浮つき'],
+    ['社交性', '人懐っこい', 'とっつきにくい']
   ];
+  const data = [];
+  for (let i = 0; i < traits.length; i++) {
+    const trait = traits[i];
+    const value1 = data_num[i * 2 + 1];
+    const value2 = data_num[i * 2 + 2];
+    data.push([...trait, value1, value2]);
+  }
 
   const detailArea = document.querySelector('.detail_area');
 

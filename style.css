@@ -59,7 +59,7 @@ header>p {
 }
 
 main {
-  margin-top: 9.2rem;
+  margin: 9.2rem 0 8.0rem;
 }
 
 .item {
@@ -157,7 +157,7 @@ main {
 .submit_area {
   display: flex;
   justify-content: center;
-  margin: 1.6rem 0 8.0rem;
+  margin: 1.6rem 0 0;
   padding: 1.6rem 0 8.0rem;
   border-bottom: 1px solid #dddfe2;
 }
