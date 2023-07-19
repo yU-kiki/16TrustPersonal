@@ -75,11 +75,19 @@ document.addEventListener('DOMContentLoaded', () => {
       radioButton.addEventListener('change', function () {
         if (this.checked) {
           selectedValues[this.name] = this.value;
-
           const orderedValues = valueOrder.map(valueId => selectedValues[valueId] || '');
           console.log(orderedValues);
         }
       });
     });
   });
+
+  const submitButton = document.querySelector('.submit-btn');
+
+  submitButton.addEventListener('click', () => {
+    const orderedValues = valueOrder.map(valueId => selectedValues[valueId] || '');
+    localStorage.setItem('selectedValues', JSON.stringify(orderedValues));
+    window.location.href = 'result.html';
+  });
+  
 });
