@@ -144,4 +144,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
     detailArea.appendChild(traitItem);
   });
+
+  var twitterLink = document.createElement('a');
+  twitterLink.href = "https://twitter.com/share?ref_src=twsrc%5Etfw";
+  twitterLink.className = "twitter-share-button";
+  twitterLink.dataset.showCount = "false";
+  twitterLink.dataset.size = "large";
+  twitterLink.dataset.text = `私の信頼タイプは、${typeText}(${typeCode})でした。\n#メディアアート実践 #16TrustPersonalities #LenLen`;
+  twitterLink.textContent = "ツイートする";
+
+  document.body.appendChild(twitterLink);
+
+  var scriptTag = document.createElement('script');
+  scriptTag.async = true;
+  scriptTag.src = "https://platform.twitter.com/widgets.js";
+  scriptTag.charset = "utf-8";
+
+  document.body.appendChild(scriptTag);
 });
