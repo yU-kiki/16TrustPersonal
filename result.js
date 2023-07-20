@@ -76,7 +76,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const resultImg = document.createElement('img');
   resultImg.className = 'result-img';
-  resultImg.src = `./img/${typeCode.toLowerCase()}.png`;
+  resultImg.src = `./img/${typeCode}.png`;
   typeArea.appendChild(resultImg);
 
   const detailArea = document.querySelector('.detail_area');
