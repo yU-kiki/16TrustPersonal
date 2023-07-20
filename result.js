@@ -37,27 +37,29 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   const data_type = [
-    ['FRUT', '自己完結、不思議ちゃん'],
-    ['FRUH', 'つかみどころのない人'],
-    ['FRST', '損する聖人'],
-    ['FRSH', '実はしっかり、人気者'],
-    ['FGUT', '拗らせばらまき人間'],
-    ['FGUH', '見返りを求めない、助け合い'],
-    ['FGST', '優しくありつづける'],
-    ['FGSH', '暖かい人格者'],
-    ['KRUT', '悲しきモンスター'],
-    ['KRUH', '典型的なダメ人間'],
-    ['KRST', '真面目君は損したくない'],
-    ['KRSH', '生きるのが上手'],
-    ['KGUT', '粘着人間'],
-    ['KGUH', '愛するよりも、愛されたい'],
-    ['KGST', '人間不信な優しい人'],
-    ['KGSH', '義理堅いサムライ']
+    ['FRUT', '自己完結、不思議ちゃん', 'このタイプの人はお金が返ってこなくても、自分が返さなくても良いと考えます。自分がお金に困っていても、それほど困っていないと感じています。', 3],
+    ['FRUH', 'つかみどころのない人', 'このタイプの人はお金を貸したり借りたりしますが、返ってこなくても良いと感じています。同様に、自分が返すことも少ないです。', 3],
+    ['FRST', '損する聖人', 'このタイプの人は自己犠牲的で、自分がなぜお金を貸すのか理解できないこともあります。それでも、借りたお金は必ず返すという誠実さを持っています。', 1],
+    ['FRSH', '実はしっかり、人気者', 'このタイプの人は交友関係が広く、他人が返さないときも気にしません。しかし、自分が借りたときは必ず返す誠実さを持っています。', 2],
+    ['FGUT', '拗らせばらまき人間', 'このタイプの人は困っている人を見捨てられず、自分が貸したお金が返ってこないと不安になることもあります。しかし、自分が借りたお金は返さないという傾向があります。', 3],
+    ['FGUH', '見返りを求めない、助け合い', 'このタイプの人は人々が助け合って生きることを望み、困った人を見捨てることができません。自分も困ったときは他人を頼ります。', 2],
+    ['FGST', '優しくありつづける', 'このタイプの人は人間関係を重視し、相手とのバランスが取れないこともありますが、それでも優しさを保つことができます。', 1],
+    ['FGSH', '暖かい人格者', 'このタイプの人は困っている人を見捨てることができず、人間の暖かさを理解しています。また、困ったときには他人を頼る能力も持っています。', 1],
+    ['KRUT', '悲しきモンスター', 'このタイプの人は他人を信用せず、人に頼ることができません。それでも手を差し伸べてくれる人を裏切ることがあります。', 3],
+    ['KRUH', '典型的なダメ人間', 'このタイプの人は他人に貸すときはきちんと返済を求めます。しかし、自分が借りるときはルーズな態度を示します。表面的には良いですが、その背後には注意が必要な性格があります。', 0],
+    ['KRST', '真面目君は損したくない', 'このタイプの人は損をしたくないと強く感じており、人付き合いが苦手で他人を頼るのが難しいです。しかし、借りたお金はきちんと返す誠実さを持っています。', 0],
+    ['KRSH', '生きるのが上手', 'このタイプの人は生きるのが上手で、お金の貸し借りを面倒と感じています。しかし、困ったときには他人を頼ることができる魅力を持っています。', 0],
+    ['KGUT', '粘着人間', 'このタイプの人は他人を評価する傾向があり、借りたお金を友情の証とみなします。そのため、返さなくても大丈夫だと考えます。', 2],
+    ['KGUH', '愛するよりも、愛されたい', 'このタイプの人は自己中心的で、人間関係に依存してお金を借りたり貸したりします。人間関係を利用する傾向があります。', 0],
+    ['KGST', '人間不信な優しい人', 'このタイプの人は人間関係を重視し、自分が貸したお金は必ず返します。しかし、他人が自分にお金を貸してくれないことに疑問を持つこともあります。', 1],
+    ['KGSH', '義理堅いサムライ', 'このタイプの人は人間関係を重視し、お金を借りたときは必ず返す義理堅さを持っています。', 2]
   ]
 
   const typeArea = document.querySelector('.type_area');
   const typeCode = data_type[data_num[0]][0];
   const typeText = data_type[data_num[0]][1];
+  const typeDescription = data_type[data_num[0]][2];
+  const typeNum = data_type[data_num[0]][3];
 
   const resultTitle = document.createElement('p');
   resultTitle.className = 'result-title';
@@ -71,6 +73,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const result16type = document.createElement('p');
   result16type.className = 'result-16type';
+  if (typeNum == 0) {
+    result16type.classList.add('red-color');
+  } else if (typeNum == 1) {
+    result16type.classList.add('blue-color');
+  } else if (typeNum == 2) {
+    result16type.classList.add('yellow-color');
+  } else if (typeNum == 3) { 
+    result16type.classList.add('green-color');
+  }
   result16type.textContent = typeCode;
   typeArea.appendChild(result16type);
 
@@ -78,6 +89,11 @@ document.addEventListener('DOMContentLoaded', () => {
   resultImg.className = 'result-img';
   resultImg.src = `./img/${typeCode}.png`;
   typeArea.appendChild(resultImg);
+
+  const resultDescription = document.createElement('span');
+  resultDescription.className = 'result-description';
+  resultDescription.textContent = typeDescription;
+  typeArea.appendChild(resultDescription);
 
   const detailArea = document.querySelector('.detail_area');
 

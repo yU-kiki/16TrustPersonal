@@ -211,6 +211,13 @@ main {
   margin-top: 1.6rem;
 }
 
+.result-description {
+  margin: 1.6rem 1.6rem 0;
+  font-size: 1.6rem;
+  line-height: 1.5;
+  color: #576071;
+}
+
 .trait_item {
   display: flex;
   flex-direction: column;
@@ -268,4 +275,17 @@ main {
   width: 100%;
   margin-top: 0.8rem;
   font-size: 1.4rem;
+}
+
+.red-color {
+  color: #F45E5F;
+}
+.blue-color {
+  color: #3B9CBC;
+}
+.yellow-color {
+  color: #E5AE38;
+}
+.green-color {
+  color: #31A878;
 }
